@@ -9,7 +9,6 @@
  
  It's recommended to use firmware version V700 or newer, which has correct baud rate and possibly other configurations as default. Hm-10 modules with older firmware may or may not work.
  
- ## Changes
- Following fixes were made after the video, but before initial commit:
+ ## Changes after the video, before the initial commit:
  * Ground pour removed behind the antenna
  * HM-10 ground pads are actually connected to the circuit :)
