@@ -1,0 +1,366 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr User 5846 4134
+encoding utf-8
+Sheet 1 1
+Title "CNC 3018 Bluetooth Module (HM10)"
+Date ""
+Rev "1.1"
+Comp "Hugatry's HackVlog"
+Comment1 "To be used with HM-10 USB-dongle. V1.1 added missing ground connections."
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L HM10:HM10 U1
+U 1 1 60A6CE63
+P 4550 1600
+F 0 "U1" H 4525 2375 50  0000 C CNN
+F 1 "HM10" H 4525 2284 50  0000 C CNN
+F 2 "HM10:HM10" H 4150 2250 50  0001 C CNN
+F 3 "" H 4150 2250 50  0001 C CNN
+	1    4550 1600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_02x04_Odd_Even J1
+U 1 1 60A6DACE
+P 2750 950
+F 0 "J1" H 2800 1267 50  0000 C CNN
+F 1 "2x4 Female Header" H 2800 1176 50  0000 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_2x04_P2.54mm_Vertical" H 2750 950 50  0001 C CNN
+F 3 "~" H 2750 950 50  0001 C CNN
+	1    2750 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR0101
+U 1 1 60A6EB38
+P 3300 850
+F 0 "#PWR0101" H 3300 700 50  0001 C CNN
+F 1 "+5V" H 3315 1023 50  0000 C CNN
+F 2 "" H 3300 850 50  0001 C CNN
+F 3 "" H 3300 850 50  0001 C CNN
+	1    3300 850 
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR0102
+U 1 1 60A6EDDB
+P 2300 850
+F 0 "#PWR0102" H 2300 700 50  0001 C CNN
+F 1 "+5V" H 2315 1023 50  0000 C CNN
+F 2 "" H 2300 850 50  0001 C CNN
+F 3 "" H 2300 850 50  0001 C CNN
+	1    2300 850 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2300 850  2550 850 
+Wire Wire Line
+	3050 850  3300 850 
+$Comp
+L power:GND #PWR0103
+U 1 1 60A6F148
+P 3150 900
+F 0 "#PWR0103" H 3150 650 50  0001 C CNN
+F 1 "GND" H 3300 850 50  0000 C CNN
+F 2 "" H 3150 900 50  0001 C CNN
+F 3 "" H 3150 900 50  0001 C CNN
+	1    3150 900 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3050 950  3050 900 
+Wire Wire Line
+	3050 900  3150 900 
+$Comp
+L power:GND #PWR0104
+U 1 1 60A6FFB6
+P 2450 900
+F 0 "#PWR0104" H 2450 650 50  0001 C CNN
+F 1 "GND" H 2300 850 50  0000 C CNN
+F 2 "" H 2450 900 50  0001 C CNN
+F 3 "" H 2450 900 50  0001 C CNN
+	1    2450 900 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2450 900  2550 900 
+Wire Wire Line
+	2550 900  2550 950 
+Text GLabel 3050 1050 2    50   Output ~ 0
+Module_RX
+Text GLabel 3050 1150 2    50   Input ~ 0
+Module_TX
+Text GLabel 4000 1050 0    50   Output ~ 0
+HM10_TX
+Text GLabel 4000 1150 0    50   Input ~ 0
+HM10_RX
+Text GLabel 2550 1050 0    50   Input ~ 0
+CNC_RST
+$Comp
+L Regulator_Linear:MCP1703A-3302_SOT23 U2
+U 1 1 60A70CCA
+P 1350 800
+F 0 "U2" H 1350 1042 50  0000 C CNN
+F 1 "MCP1703A-3302_SOT23" H 1350 951 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 1350 1000 50  0001 C CNN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/20005122B.pdf" H 1350 750 50  0001 C CNN
+	1    1350 800 
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR0105
+U 1 1 60A756DE
+P 650 800
+F 0 "#PWR0105" H 650 650 50  0001 C CNN
+F 1 "+5V" H 665 973 50  0000 C CNN
+F 2 "" H 650 800 50  0001 C CNN
+F 3 "" H 650 800 50  0001 C CNN
+	1    650  800 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	650  800  800  800 
+$Comp
+L power:GND #PWR0106
+U 1 1 60A7619D
+P 1350 1100
+F 0 "#PWR0106" H 1350 850 50  0001 C CNN
+F 1 "GND" H 1500 1050 50  0000 C CNN
+F 2 "" H 1350 1100 50  0001 C CNN
+F 3 "" H 1350 1100 50  0001 C CNN
+	1    1350 1100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR0107
+U 1 1 60A76921
+P 2000 800
+F 0 "#PWR0107" H 2000 650 50  0001 C CNN
+F 1 "+3.3V" H 2015 973 50  0000 C CNN
+F 2 "" H 2000 800 50  0001 C CNN
+F 3 "" H 2000 800 50  0001 C CNN
+	1    2000 800 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1650 800  1750 800 
+$Comp
+L Device:C_Small C1
+U 1 1 60A77484
+P 800 1000
+F 0 "C1" H 892 1046 50  0000 L CNN
+F 1 "100n" H 892 955 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 800 1000 50  0001 C CNN
+F 3 "~" H 800 1000 50  0001 C CNN
+	1    800  1000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C2
+U 1 1 60A77C89
+P 1750 1000
+F 0 "C2" H 1842 1046 50  0000 L CNN
+F 1 "100n" H 1842 955 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 1750 1000 50  0001 C CNN
+F 3 "~" H 1750 1000 50  0001 C CNN
+	1    1750 1000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1350 1100 1750 1100
+Connection ~ 1350 1100
+Wire Wire Line
+	1750 900  1750 800 
+Connection ~ 1750 800 
+Wire Wire Line
+	1750 800  2000 800 
+Wire Wire Line
+	800  900  800  800 
+Connection ~ 800  800 
+Wire Wire Line
+	800  800  1050 800 
+Wire Wire Line
+	800  1100 1350 1100
+$Comp
+L Transistor_FET:2N7002 Q1
+U 1 1 60A78C4B
+P 1650 2000
+F 0 "Q1" V 1899 2000 50  0000 C CNN
+F 1 "2N7002" V 1990 2000 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 1850 1925 50  0001 L CIN
+F 3 "https://www.onsemi.com/pub/Collateral/NDS7002A-D.PDF" H 1650 2000 50  0001 L CNN
+	1    1650 2000
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small_US R1
+U 1 1 60A7D63E
+P 1250 2000
+F 0 "R1" H 1318 2046 50  0000 L CNN
+F 1 "10k" H 1318 1955 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 1250 2000 50  0001 C CNN
+F 3 "~" H 1250 2000 50  0001 C CNN
+	1    1250 2000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small_US R2
+U 1 1 60A7E139
+P 1950 2000
+F 0 "R2" H 2018 2046 50  0000 L CNN
+F 1 "10k" H 2018 1955 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 1950 2000 50  0001 C CNN
+F 3 "~" H 1950 2000 50  0001 C CNN
+	1    1950 2000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1250 1900 1250 1800
+Wire Wire Line
+	1250 1800 1650 1800
+Wire Wire Line
+	1850 2100 1950 2100
+Wire Wire Line
+	1250 2100 1450 2100
+$Comp
+L power:+5V #PWR0108
+U 1 1 60A7F789
+P 1950 1900
+F 0 "#PWR0108" H 1950 1750 50  0001 C CNN
+F 1 "+5V" H 1965 2073 50  0000 C CNN
+F 2 "" H 1950 1900 50  0001 C CNN
+F 3 "" H 1950 1900 50  0001 C CNN
+	1    1950 1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR0109
+U 1 1 60A80800
+P 1250 1800
+F 0 "#PWR0109" H 1250 1650 50  0001 C CNN
+F 1 "+3.3V" H 1265 1973 50  0000 C CNN
+F 2 "" H 1250 1800 50  0001 C CNN
+F 3 "" H 1250 1800 50  0001 C CNN
+	1    1250 1800
+	1    0    0    -1  
+$EndComp
+Connection ~ 1250 1800
+Text GLabel 1150 2100 0    50   Input ~ 0
+HM10_TX
+Wire Wire Line
+	1150 2100 1250 2100
+Connection ~ 1250 2100
+Text GLabel 2200 2100 2    50   Output ~ 0
+Module_TX
+Wire Wire Line
+	2200 2100 1950 2100
+Connection ~ 1950 2100
+$Comp
+L power:+3.3V #PWR0110
+U 1 1 60A88997
+P 3800 2150
+F 0 "#PWR0110" H 3800 2000 50  0001 C CNN
+F 1 "+3.3V" H 3815 2323 50  0000 C CNN
+F 2 "" H 3800 2150 50  0001 C CNN
+F 3 "" H 3800 2150 50  0001 C CNN
+	1    3800 2150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3800 2150 4000 2150
+$Comp
+L Device:R_Small_US R4
+U 1 1 60A8B78C
+P 1600 2650
+F 0 "R4" V 1395 2650 50  0000 C CNN
+F 1 "1k" V 1486 2650 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 1600 2650 50  0001 C CNN
+F 3 "~" H 1600 2650 50  0001 C CNN
+	1    1600 2650
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small_US R3
+U 1 1 60A8C284
+P 1350 2900
+F 0 "R3" H 1282 2854 50  0000 R CNN
+F 1 "2k" H 1282 2945 50  0000 R CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 1350 2900 50  0001 C CNN
+F 3 "~" H 1350 2900 50  0001 C CNN
+	1    1350 2900
+	-1   0    0    1   
+$EndComp
+Text GLabel 1900 2650 2    50   Input ~ 0
+Module_RX
+Wire Wire Line
+	1350 2650 1350 2800
+$Comp
+L power:GND #PWR0111
+U 1 1 60A8CCD7
+P 1350 3000
+F 0 "#PWR0111" H 1350 2750 50  0001 C CNN
+F 1 "GND" H 1500 2950 50  0000 C CNN
+F 2 "" H 1350 3000 50  0001 C CNN
+F 3 "" H 1350 3000 50  0001 C CNN
+	1    1350 3000
+	1    0    0    -1  
+$EndComp
+Text GLabel 1100 2650 0    50   Output ~ 0
+HM10_RX
+Wire Wire Line
+	1100 2650 1350 2650
+Connection ~ 1350 2650
+Wire Wire Line
+	1500 2650 1350 2650
+Wire Wire Line
+	1700 2650 1900 2650
+$Comp
+L power:GND #PWR?
+U 1 1 60B68F4C
+P 4000 2650
+F 0 "#PWR?" H 4000 2400 50  0001 C CNN
+F 1 "GND" H 4150 2600 50  0000 C CNN
+F 2 "" H 4000 2650 50  0001 C CNN
+F 3 "" H 4000 2650 50  0001 C CNN
+	1    4000 2650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4000 2650 4000 2600
+Wire Wire Line
+	4200 2600 4000 2600
+Connection ~ 4000 2600
+Wire Wire Line
+	4000 2600 4000 2250
+$Comp
+L power:GND #PWR?
+U 1 1 60B6A451
+P 5050 2600
+F 0 "#PWR?" H 5050 2350 50  0001 C CNN
+F 1 "GND" H 5200 2550 50  0000 C CNN
+F 2 "" H 5050 2600 50  0001 C CNN
+F 3 "" H 5050 2600 50  0001 C CNN
+	1    5050 2600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4900 2600 5050 2600
+Wire Wire Line
+	5050 2250 5050 2600
+Connection ~ 5050 2600
+Text Notes 2100 3150 0    50   ~ 0
+LEVEL SHIFTERS
+Wire Notes Line
+	500  1550 2750 1550
+Wire Notes Line
+	2750 1550 2750 3200
+Wire Notes Line
+	2750 3200 500  3200
+Wire Notes Line
+	500  3200 500  1550
+$EndSCHEMATC
